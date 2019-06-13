@@ -1,0 +1,112 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<main class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+  <!--  About me -->
+  <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div>
+      <div class="uk-vertical-align-middle">
+        <h1>Name</h1>
+        <p class="uk-text-large">Who you are</p>
+        <p>After graduating from Houghton College I started my first job teaching 2nd grade at Maple West Elementary
+          School in Williamsville, NY. Williamsville was a great school district in which to work. I collaborated with
+          highly qualified teachers, attended outstanding professional development and worked with wonderful students. I
+          remember each group of students with fondness. There was a diversity of ability levels, ethnic and cultural
+          backgrounds and personalities. While teaching I attended Buffalo State College to earn my Master’s of
+          Education Degree.
+        </p>
+      </div>
+    </div>
+    <div>
+      <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider>
+        <ul class="uk-slider-items uk-child-width-1-1@s uk-child-width-1-3@m uk-grid">
+          <li *ngFor="let photo of photos">
+            <img data-src="{{photo}}" uk-img>
+          </li>
+          <li *ngFor="let photo of photos">
+            <img data-src="{{photo}}" uk-img>
+          </li>
+        </ul>
+
+        <a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous
+           uk-slider-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next uk-slider-item="next"></a>
+      </div>
+    </div>
+  </div>
+  <hr class="uk-divider-icon">
+
+  <!-- Portfolio -->
+  <div class="uk-child-width-expand@s" uk-grid>
+    <div class="uk-child-width-1-1@m" uk-grid uk-lightbox="animation: slide">
+      <div>
+        <a
+          *ngFor="let portfolio of portfolios; let first = first"
+          [class.uk-hidden]="!first"
+          class="uk-inline"
+          [href]="portfolio"
+        >
+          <img *ngIf="first" data-src="{{portfolio}}" uk-img>
+        </a>
+      </div>
+    </div>
+    <div class="uk-text-left@s uk-text-center">
+      <h1>Портфолио</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur.</p>
+      <a class="uk-button uk-button-default" href="#">Смотреть все</a>
+    </div>
+  </div>
+  <hr class="uk-divider-icon">
+
+  <!-- Work with team -->
+  <div class="uk-child-width-expand@s uk-flex" uk-grid>
+
+    <div class="uk-text-right@s uk-text-center uk-flex-first@s uk-flex-last">
+      <h1>Работа в коллективе</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur.</p>
+    </div>
+    <div>
+      <div class="uk-child-width-1-1@m" uk-grid uk-lightbox="animation: slide">
+        <a
+          *ngFor="let team of teams; let first = first"
+          [class.uk-hidden]="!first"
+          class="uk-inline"
+          [href]="team"
+        >
+          <img *ngIf="first" data-src="{{team}}" uk-img>
+        </a>
+      </div>
+    </div>
+  </div>
+  <hr class="uk-divider-icon">
+
+  <div class="uk-child-width-expand@s" uk-grid>
+    <div>
+      <div class="uk-child-width-1-1@m" uk-grid uk-lightbox="animation: fade">
+        <a
+          *ngFor="let solution of solutions; let first = first"
+          [class.uk-hidden]="!first"
+          class="uk-inline"
+          [href]="solution"
+        >
+          <img *ngIf="first" data-src="{{solution}}" uk-img>
+        </a>
+      </div>
+    </div>
+    <div class="uk-text-left@s uk-text-center">
+      <h1>Решение задач</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur.</p>
+      <a class="uk-button uk-button-default" href="#">Узнать больше</a>
+    </div>
+  </div>
+</main>
+
+
+<router-outlet></router-outlet>
